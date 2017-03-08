@@ -24,7 +24,12 @@
                 return myDiv;
 				
             }
-			
+			function removeElement(_element){
+         var _parentElement = _element.parentNode;
+         if(_parentElement){
+                _parentElement.removeChild(_element);  
+         }
+}
             btnRandomNum.onclick = function huiubjl() {
                 
                 document.getElementById("my-text").value = Math.ceil(Math.random() * 99);
@@ -48,17 +53,17 @@
               }
             }
             btnThree.onclick = function leftDelDiv() {
-                var myBody = document.getElementsByClassName("big-box")[0];
-                if (myBody.firstChild.innerText) {
-                    alert(myBody.firstChild.innerText);
-                    myBody.removeChild(myBody.firstChild);
+                var myBody = document.getElementsByTagName('div');
+                if (myBody[0].innerText) {
+                    alert(myBody[0].innerText);
+                    removeElement(myBody[0]);
                 }
             }
             btnFour.onclick = function rightDelDiv() {
-                var myBody = document.getElementsByClassName("big-box")[0];
-                if (myBody.lastChild.innerText) {
-                    alert(myBody.lastChild.innerText);
-                    myBody.removeChild(myBody.lastChild);
+               var myBody = document.getElementsByTagName('div');
+                if (myBody[myBody.length-1].innerText) {
+                    alert(myBody[myBody.length-1].innerText);
+                    removeElement(myBody[myBody.length-1]);
                 }
             }
 			btnFive.onclick = function sortNum() {
