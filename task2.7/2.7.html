@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task22</title>
+    <style type="text/css">
+[class *= layer] {
+    display: flex;
+    padding: 10px;
+	border: 2px solid red;
+    background-color: #fff;
+	margin:10px;
+	
+}
+layer2,layer2\3,layer4 {
+    flex: 1;
+    
+}
+
+button {
+    display: inline-block;
+    margin: 20px;
+    width: 100px;
+    line-height: 20px;
+    background-color: white;
+    border: 2px solid #5b4563;
+    border-radius: 5px;
+    font-size: .75rem;
+}
+button:hover {
+    background-color: #5b4563;
+    color: white;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="layer1" style="width:200px;">
+        <div class="layer2">
+            <div class="layer3">
+                <div class="layer4"></div>
+                <div class="layer4"></div>
+            </div>
+            <div class="layer3">
+                <div class="layer4"></div>
+                <div class="layer4"></div>
+            </div>
+        </div>
+        <div class="layer2">
+            <div class="layer3">
+                <div class="layer4"></div>
+                <div class="layer4"></div>
+            </div>
+            <div class="layer3">
+                <div class="layer4"></div>
+                <div class="layer4"></div>
+            </div>
+        </div>
+    </div>
+
+        <button id="preorder">前序遍历</button>
+        <button id="inorder">中序遍历</button>
+        <button id="postorder">后序遍历</button>
+    <script src="2.7.js"></script>
+</body>
+</html>
