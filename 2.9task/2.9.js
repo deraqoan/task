@@ -95,14 +95,16 @@ function init () {
     });
 	
     addEventHandler(btnGroup[0],'click',function(){
-    	clearPre(orderArr);
+    	
 		preOrder(root);
+		clearPre(orderArr);
     	message.innerHTML='查询结果';
     	changeColor(orderArr);
     });
 	addEventHandler(btnGroup[1],'click',function(){
-    	clearPre(orderArrt);
+    	
 		postOrder(root);
+		clearPre(orderArrt);
     	message.innerHTML='查询结果';
     	changeColor(orderArrt);
     });
