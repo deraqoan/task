@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2-9</title>
+    <style type="text/css">
+	[class *= level] {
+    display: flex;
+    flex: 1;
+    padding: 5px 0px;
+    margin: 5px;
+    border: 2px solid #5b4563;
+    font-size: .75rem;
+    line-height: 10px;
+    background-color: white;
+}
+.flex-4 {
+    flex: 4;
+}
+.flex-2 {
+    flex: 2;
+}
+.flex-3 {
+    flex: 3;
+}
+.flex-5 {
+    flex: 5;
+}
+.flex-6 {
+    flex: 6;
+}
+
+	</style>
+</head>
+<body>
+<div class="wrapper level0" style="width:500px; ">
+    Super
+    <div class="level1 flex-4">
+        Good
+        <div class="level2 flex-5">
+            Apple
+            <div class="level3">
+                One
+            </div>
+            <div class="level3">
+                Two
+            </div>
+            <div class="level3">
+                Three
+            </div>
+            <div class="level3">
+                Four
+            </div>
+        </div>
+        <div class="level2 flex-2">
+            Phone
+        </div>
+        <div class="level2 flex-3">
+            <div class="level3">
+                Book
+            </div>
+            <div class="level3">
+                School
+            </div>
+        </div>
+    </div>
+    <div class="level1 flex-4">
+        Note
+        <div class="level2">
+            Human
+            <div class="level3">
+                Code
+            </div>
+            <div class="level3">
+                Operate
+            </div>
+            <div class="level3">
+                Man
+            </div>
+        </div>
+        <div class="level2">
+            Program
+            <div class="level3 flex-6">
+                Bement
+                <div class="level4">
+                    Cat
+                </div>
+            </div>
+            <div class="level3 flex-4">
+                Gass
+            </div>
+        </div>
+    </div>
+    <div class="level1 flex-2">
+        Fish
+    </div>
+</div>
+<button>前序遍历</button>
+<button>后序遍历</button>
+<input type="text" id="my-input" placeholder="请输入查询字符串"/>
+<button>开始查询</button>
+<span>查询结果</span>
+<button>删除节点</button>
+<input type="text" id="agg" placeholder="请输入插入字符串"/>
+<button>增加节点</button>
+<script src="2.9.js"></script>
+</body>
+</html>
