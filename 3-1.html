@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>3-1</title>
+<style type="text/css">
+div{margin:80px; display: flex;height:40px; }
+input{border-radius:5px;width:340px;height:35px; margin-left:30px; margin-right:10px;}
+#v{border:#CCC 2px solid;}
+#b{border: #F99 2px solid;}
+#g{border: #A5D796 2px solid;}
+#button{background-color:#2E78BB;display: inline-block; height:40px;  width: 80px;;
+border-radius:5px;border: 1px solid  #2E78BB;color:#FFF;}
+#button:hover { background-color: #999;}
+span{font:"MS Serif", "New York", serif; font-size:20px;}
+h4{margin:0 70px; font-stretch:wider;}
+</style>
+</head>
+
+<body>
+<body>
+<div><span>名称</span>
+<input type="text" id="v" value="" />
+ 
+<input type="button" id="button" value="验证" onclick="rr(document.getElementById('v').value)">
+ 
+<h4 id="t" style="color:#ccc">必填。长度为4-16个字符</h4>
+</div> 
+<div><span>名称</span>
+<input type="text" id="b" value="" />
+ 
+<input type="button" id="button" value="验证" onclick="rg(document.getElementById('b').value)">
+ 
+<h4 id="o" style="color:#f99">姓名不能为空</h4>
+</div> 
+<div><span>名称</span>
+<input type="text" id="g" value="" />
+ 
+<input type="button" id="button" value="验证" onclick="rt(document.getElementById('g').value)">
+ 
+<h4 id="w" style="color:#a5d796">名称格式正确</h4>
+</div> 
+<script>
+function getStrLen (str){
+        var realLength = 0, len = str.length, charCode = -1;
+        for (var i = 0; i < len; i++) {
+            charCode = str.charCodeAt(i);
+            if (charCode >= 0 && charCode <= 128) realLength += 1;
+            else realLength += 2;
+        }
+        return realLength;
+}
+
+
+function rr(val){
+ 
+ reg = /[\w\W]$/;
+  var  munOne = document.getElementById('v').value;
+  var leng = getStrLen(munOne);
+ if(!reg.test(val)){
+  
+  document.getElementById('t').innerHTML = '不符合标准！';
+ 
+ }
+ else if(leng>16||leng<4){
+	
+	 document.getElementById('t').innerHTML = '请输入4-16位长度的字符';
+ }
+ else{
+  document.getElementById('t').innerHTML = '符合标准！';
+	
+ }
+ 
+}
+function rg(val){
+ 
+ reg = /^\s*$/g;
+ 
+ if(reg.test(val)){
+ 
+  document.getElementById('o').innerHTML = '不符合标准！';
+ 
+ }else{
+ 
+  document.getElementById('o').innerHTML = '符合标准！';
+ 
+ }
+ 
+}
+function rt(val){
+ 
+ reg = /[\d]/g;
+ 
+ if(reg.test(val)){
+ 
+  document.getElementById('w').innerHTML = '只能输入字母和汉字！';
+ 
+ }else{
+ 
+  document.getElementById('w').innerHTML = '符合标准！';
+ 
+ }
+ 
+}
+ 
+ 
+</script>
+ 
+</body>
+</html>
