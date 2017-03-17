@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>3-3</title>
+<style type="text/css">
+dl{margin:40px 10%; display: flex;height:40px; }
+dd input{border-radius:5px;width:70%;height:35px; border:#CCC 2px solid;}
+#button{background-color:#2E78BB;display: inline-block; height:40px;  width: 80px;;
+border-radius:5px;border: 1px solid  #2E78BB;color:#FFF; float:right; margin-right:25%; margin-top:20px;}
+#button:hover { background-color: #999;} 
+select{border:2px solid #CCC; width:20%; background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent; height:40px; margin:0 5%; appearance:none;-moz-appearance:none;-webkit-appearance:none;}
+select::-ms-expand { display: none; }
+dt{font:"MS Serif", "New York", serif; font-size:20px; width:15%;  float:left;}
+.radio-2 [type="radio"]{display: none;}  
+.radio-2 label{display:inline-block;width: 20px;height: 20px;border-radius: 100%; border: #CCC 1px solid ;background-color:#fff; position: relative;margin-right: 10px;}  
+.radio-2 label:after{  
+            content: "";  
+            width: 8px;  
+            height: 8px;  
+            border-radius: 50%;  
+            background-color: #FDFEFD;  
+            position: absolute;  
+            top:6px;  
+            left:6px;  
+            transform: scale(0);  
+            transition: transform .2s ease-out;  
+        }  
+.radio-2 [type="radio"]:checked+label{  
+            background-color: #3198FA;  
+              
+            transition:all .3s ease-in;  
+        }  
+.radio-2 [type="radio"]:checked+label:after{  
+            transform: scale(1);  
+            transition:all .3s ease-in;  
+        }  
+.import_prompt{
+    margin:0 20%; 
+	font-stretch:wider; 
+	color:#ccc;
+    line-height:20px;
+    }
+.error_prompt{
+	color:#E93F33;
+	margin:0 20%; 
+	font-stretch:wider; 
+    }
+.ok_prompt{
+	color:#62BC47;
+	margin:0 20%; 
+	font-stretch:wider; 
+    }
+</style>
+<script src="3-3.js"></script>
+</head>
+<body>
+<body>
+      <form action="http://www.baidu.com" onsubmit="return toVaild()">
+        <dl>
+          <dt>名称</dt>
+          <dd><input type="text" id="userName" class="inputs userWidth" onfocus="userNameFocus()" onblur="userNameBlur()" /></dd>
+          <h4 id="userNameId"></h4>
+        </dl>
+         <dl>
+          <dt>密码</dt>
+          <dd><input type="password" id="pwd" class="inputs"  onfocus="pwdFocus()" onblur="pwdBlur()"/></dd>
+          <h4 id="pwdId"></h4>
+        </dl>
+         <dl>
+          <dt>密码确认</dt>
+          <dd><input type="password" id="repwd" class="inputs"  onblur="repwdBlur()" onfocus="repwdFocus()"/></dd>
+          <h4 id="repwdId"></h4>
+        </dl>
+        <dl>
+          <dt>邮箱</dt>
+          <dd><input type="text" id="email" class="inputs" onfocus="emailFocus()" onblur="emailBlur()" /></dd>
+          <h4 id="emailId"></h4>
+        </dl>
+        
+        <dl>
+          <dt>手机号</dt>
+          <dd><input type="text" id="tel" class="inputs"  onfocus="telFocus()" onblur="telBlur()" /></dd>
+          <h4 id="telId"></h4>
+        </dl>
+        <dl class="radio-2">  
+        <dt style="margin-left:20%;">
+        <input type="radio" name="radio-2" onclick="switchItem('本')" id="radio-2-1" >  
+        <label for="radio-2-1"></label>在校生
+        </dt>
+        <dt>
+        <input type="radio" name="radio-2" onclick="switchItem('外')" id="radio-2-2">  
+        <label for="radio-2-2"></label>非在校生
+        </dt>
+        </dl>      
+        <dl id="s1" style="display:none">
+          <dt>就业单位</dt>
+          <dd><input type="text" id="tel" class="inputs"  onfocus="telFocus()" onblur="telBlur()" /></dd>
+          <h4 id="telId"></h4>
+        </dl>
+       <div id='s2' style="display:none"><span style="margin-left:10%; font:"MS Serif", "New York", serif; font-size:20px;">学校</span>
+        <select class='prov' id='prov' onchange='changeSchool()' >
+            <option value=''>--请选择城市--</option>
+        </select>
+        <select class='city' id='city' >
+            <option value=''>--请选择学校--</option>
+        </select>
+    </div>
+        <input type="submit"  id="button" value="提交"/>  
+      </form>
+<script>
+        var province=document.getElementById("prov");
+        var city=document.getElementById("city");
+        var arr_prov=new Array(new Option("--请选择城市--",''),new Option("北京",'bj'),new Option("湖南","hn"),new Option("广东","gd"));
+        var arr_city=new Array();
+		arr_city[0]=new Array(new Option("--请选择学校--",''));
+        arr_city[1]=new Array(new Option("北京大学",'bj'),new Option("清华大学",'qh'),new Option("中国人民大学",'zr'));
+        arr_city[2]=new Array(new Option("湖南大学",'cs'),new Option("湘谭大学",'xh'),new Option("中南大学",'zn'));
+        arr_city[3]=new Array(new Option("广州大学",'gz'),new Option("深圳大学",'sz'),new Option("中山大学",'zs'));
+   window.onload = function load(){
+            for(var i=0;i<arr_prov.length;i++){
+                province.options[i]=arr_prov[i];
+            }
+        }
+        function changeSchool(){
+            city.options.length=0;
+            var index=province.selectedIndex;
+            for(var i=0;i<arr_city[index].length;i++){
+                city.options[i]=arr_city[index][i];
+            }
+        }
+    </script>
+</body>
+</html>
