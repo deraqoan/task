@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>3-5</title>
+<script src="3-5.js"></script>
+
+<style type="text/css" media="screen">
+body{
+	margin: 0;
+	padding: 0;
+}
+.checkboard{
+	margin:0;
+	padding:0;
+	position: relative;
+	height:451px;
+	width: 451px;
+}
+th,td{
+	height: 40px;
+	width: 40px;
+	padding: 0;
+}
+tbody td{
+	border: 1px solid #ccc;  
+}
+table{
+	border-collapse:collapse;
+	margin: auto;
+
+}
+tbody tr:nth-child(1) td{
+            border-top: 2px solid #000;
+        }
+tbody tr td:nth-child(2){
+            border-left: 2px solid #000;
+        }
+tbody tr td:nth-child(2){
+            border-left: 2px solid #000;
+        }
+tbody tr:last-child td{
+            border-bottom: 2px solid #000;
+        }
+tbody tr td:last-child{
+            border-right: 2px solid #000;
+        }	
+
+#div{
+	top:206px;
+	left:205px;
+	position: absolute;
+	}
+
+</style>
+</head>
+
+<body>
+		<div class="checkboard">
+			<table>
+			<thead>
+            <tr>
+                <th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th>
+                <th>7</th> <th>8</th> <th>9</th> <th>10</th>
+            </tr>
+            </thead>
+            <tbody>
+				<tr>
+				<th>1</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+				<th>2</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+				<th>3</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+				<th>4</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+				<th>5</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+				<th>6</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+				<th>7</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+				<th>8</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+				<th>9</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+				<th>10</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+				</tr>
+			</tbody>
+			</table>
+			 <div id="div" style="width: 40px; height: 40px;  -webkit-transform:  rotate(0deg) "><img src="head.jpg" alt="head"  ></div>
+		</div>
+		<div style=" left:41px; position:absolute; margin-top:20px;">
+		<input type="text">
+        
+		</div>
+        <button onclick="test();" style="margin-left:200px;margin-top:20px;">执行</button>
+   
+</body>
+</html>
