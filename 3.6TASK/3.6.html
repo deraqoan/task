@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>R37 | 浮出层</title>
+    
+    <link rel="stylesheet" type="text/css" href="3.6.css">
+
+</head>
+<body>
+    <div class="tips">
+    <p>点击半透明遮罩或浮出层顶部关闭按钮,关闭浮出层</p>
+    <p>点击页面深绿色头部登录按钮,显示浮出层</p>
+    <p>拖拽浮出层顶部,可使其移动</p>
+    <p>拖拽浮出层右边框或下边框,可改变其大小</p>
+    </div>
+   <button  class="btn" id="shown">显示弹窗</button>
+
+   
+    <section class="modal" id="modalExample" > </section>
+    <div class="modal-wrapper" id="modal-wrapper">
+        <div class="modal-header" id="modal-header">
+            <button class="close" type="button" id="hide">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form method="post" action="/">
+                    <p class="modal-message">
+                    <input type="text" name="username" placeholder="请输入用户名" />
+                   
+                    <input type="password" name="password" placeholder="请输入密码" />
+                   </p>
+            <button class="modal-button success" type="button" id="hideT">登录</button>
+             </form>
+        </div>
+        <div class="modal-footer"></div>
+        <div id="line"></div>
+        <div id="linet"></div></div>
+
+
+    
+    <script type="text/javascript" src="3.6.js"></script>
+</body>
+</html>
