@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>省市联动效果</title>
+		
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.cityselect.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				$("#city_5").citySelect({
+					url:{"citylist":[
+						{"p":"前端技术","c":[{"n":"HTML","a":[{"s":"CSS2.0"},{"s":"CSS3.0"}]},{"n":"CSS","a":[{"s":"CSS2.0"},{"s":"CSS3.0"}]},{"n":"JAVASCIPT"}]},
+						{"p":"编程语言","c":[{"n":"C"},{"n":"C++"},{"n":"Objective-C"},{"n":"PHP"},{"n":"JAVA"}]},
+						{"p":"数据库","c":[{"n":"Mysql"},{"n":"SqlServer"},{"n":"Oracle"},{"n":"DB2"}]},
+					]},
+					prov:"",
+					city:"",
+					dist:"",
+					nodata:"none"
+				});
+			});
+		</script>
+	</head>
+	
+	<body>
+	
+			
+				<h3>自定义下拉选项</h3>
+				<div id="city_5">
+					<select class="prov"></select>
+					<select class="city" disabled="disabled"></select>
+					<select class="dist" disabled="disabled"></select>
+		
+			
+			
+		</div>
+		
+	</body>
+</html>

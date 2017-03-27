@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ColorPicker - jQuery plugin</title>
+	<link rel="stylesheet" href="css/colorpicker.css" type="text/css" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/colorpicker.js"></script>
+    <script>
+	var EYE = window.EYE = function() {
+		var _registered = {init: []};
+		return {
+			init: function() {
+				$.each(_registered.init, function(nr, fn){
+					fn.call();
+				});
+			},	
+			register: function(fn, type) {
+				if (!_registered[type]) {
+					_registered[type] = [];
+				}
+				_registered[type].push(fn);
+			}
+		};
+	}();
+	$(EYE.init);
+	var initLayout = function() {
+		$('#colorpickerHolder').ColorPicker({flat: true});
+		$('#colorpickerHolder2').ColorPicker({flat: true});	
+		$('#colorpickerField1, #colorpickerField2, #colorpickerField3').ColorPicker({
+			onSubmit: function(hsb, hex, rgb, el) {
+				$(el).val(hex);
+				$(el).ColorPickerHide();
+			},
+			onBeforeShow: function () {
+				$(this).ColorPickerSetColor(this.value);
+			}
+		})
+		.bind('keyup', function(){
+			$(this).ColorPickerSetColor(this.value);
+		});
+	};
+	EYE.register(initLayout, 'init');
+	</script>   
+</head>
+<body>
+  <div id="customWidget"><div id="colorpickerHolder2"></div></div>
+</body>
+</html>

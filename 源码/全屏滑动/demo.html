@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>fullPage.js - Pure Javascript version</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage plugin by Alvaro Trigo. Pure javascript version of full screen slider." />
+	<meta name="keywords"  content="fullpage,jquery,alvaro,trigo,plugin,fullscren,screen,full,iphone5,apple,pure,javascript,slider,hijacking" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="javascript.fullPage.css" />
+
+	<style>
+		
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+		form,fieldset,input,textarea,p,blockquote,th,td {
+		    padding: 0;
+		    margin: 0;
+		}
+		a{
+			text-decoration:none;
+		}
+		table {
+		    border-spacing: 0;
+		}
+		fieldset,img {
+		    border: 0;
+		}
+		address,caption,cite,code,dfn,em,strong,th,var {
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		strong{
+			font-weight: bold;
+		}
+		ol,ul {
+		    list-style: none;
+		    margin:0;
+		    padding:0;
+		}
+		caption,th {
+		    text-align: left;
+
+		}
+		h1,h2,h3,h4,h5,h6 {
+		    font-weight: normal;
+		    font-size: 100%;
+		    margin:0;
+		    padding:0;
+		    color:#444;
+		}
+		/*
+		#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; 
+  		background-image: /our video /;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; 
+   		z-index:3;
+	}*/
+		q:before,q:after {
+		    content:'';
+		}
+		abbr,acronym { border: 0;
+		}
+		body{
+			font-family: arial,helvetica;
+			color: #F2F2F2;
+		}
+		h1{
+			font-size: 6em;
+		}
+		p{
+			font-size: 2em;
+		}
+		.content{
+			position: relative;//可以设置自定义高度不设置就铺满全屏
+			top: 50%;
+			transform: translateY(-50%);
+			text-align: center;
+		}
+
+		#section0{
+			background-color: #BFDA00;
+		}
+		#section0 h1{
+			color: #444;
+		}
+		#section0 p{
+			color: #333;
+			opacity: 0.4;
+		}
+
+
+		/* Section 2#section3{
+		background-image: url(imgs/bg4.jpg);
+		padding: 6% 0 0 0;
+	}设置背景
+		 * --------------------------------------- */
+		#section1{
+			background-color: #2EBE21;
+		}
+		#section1 h1{
+			color: #fff;
+		}
+		#section1 p{
+			opacity: 0.8;
+		}
+
+		#section2{
+			background-color: #2C3E50;
+		}
+		#section2 h1{
+			color: #F2F2F2;
+		}
+		#section2 p{
+			opacity: 0.6;
+		}
+	</style>
+    <!--var deleteLog = false;
+
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+				anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+				menu: '#menu',
+				onLeave: function(index, nextIndex, direction){
+					if(deleteLog){
+						$('#callbacksDiv').html('');
+					}
+					$('#callbacksDiv').append('<p>onLeave - index:' + index + ' nextIndex:' + nextIndex + ' direction:' + direction + '</p>')
+					console.log("onLeave--" + "index: " + index + " nextIndex: " + nextIndex + " direction: " +  direction);
+				},
+				onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
+					if(deleteLog){
+						$('#callbacksDiv').html('');
+					}
+					$('#callbacksDiv').append('<p>onSlideLeave - anchorLink:' + anchorLink + " index:" + index + " slideIndex:" + slideIndex +" direction:" + direction + " nextSlideIndex:" + nextSlideIndex + '</p>');
+					console.log("onSlideLeave--" + "anchorLink: " + anchorLink + " index: " + index + " slideIndex: " + slideIndex + " direction: " + direction);
+				},
+				afterRender: function(){
+					$('#callbacksDiv').append('<p>afterRender</p>');
+					console.log("afterRender");
+				},
+				afterResize: function(){
+					$('#callbacksDiv').append('<p>afterResize</p>');
+					console.log("afterResize");
+				},
+				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
+					$('#callbacksDiv').append('<p>afterSlideLoad - anchorLink:' + anchorLink + " index:" + index + " slideAnchor:" + slideAnchor +" slideIndex:" + slideIndex + '</p>');
+					deleteLog = true;
+					console.log("afterSlideLoad--" + "anchorLink: " + anchorLink + " index: " + index + " slideAnchor: " + slideAnchor + " slideIndex: " + slideIndex);
+					console.log("----------------");
+				},
+				afterLoad: function(anchorLink, index){
+                    console.log("after Load  " + index);
+					$('#callbacksDiv').append('<p>afterLoad - anchorLink:' + anchorLink + " index:" + index + '</p>');
+					deleteLog = true;
+					console.log('===============');
+					console.log("afterLoad--" + "anchorLink: " + anchorLink + " index: " + index );
+				}
+			});
+
+		});-->
+</head>
+<body>
+
+<!-- 注释内容 /*<a href="https://" id="githubLink"><img style="position: fixed;z-index:99; top: 0; right: 0; border: 0;" src="#.png" alt="Fork me on GitHub"></a>设置固定背景图*/
+<div style="position:fixed;top:50px;left:50px;color:white;z-index:999;" id="callbacksDiv"></div>设置监听图片数据
+-->
+
+<div id="fullpage">
+	<div class="section " id="section0">
+		<div class="content"><h1>fullPage.js</h1><!-- <video id="myVideo" loop muted data-autoplay>
+			<source src="imgs/flowers.mp4" type="video/mp4">
+			<source src="imgs/flowers.webm" type="video/webm">
+		</video> --></div>
+	</div>
+	<div class="section" id="section1">
+		<div class="slide" id="slide1">
+			<div class="content"><h1>No need for jQuery</h1></div>
+		</div>
+		<div class="slide" id="slide2">
+			<div class="content"><h1>Slides too!</h1></div>
+		</div>
+		<div class="slide" id="slide2">
+			<div class="content">
+				<h1>More slides!</h1>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section2">
+		<div class="content">
+			<h1>Compatible</h1>
+           <!-- 注释内容  /* Section 2<iframe width="560" height="315" src="https://www.youtube.com/embed/qiCVPpI9l3M" frameborder="0" allowfullscreen data-autoplay></iframe>
+            <video loop muted controls data-autoplay>
+            <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            <source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+          </video>   
+		 * --------------------------------------- */
+            /*<audio controls data-autoplay>
+          <source src="imgs/horse.ogg" type="audio/ogg">
+          <source src="imgs/horse.mp3" type="audio/mpeg">
+      </audio>*/-->
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="javascript.fullPage.js"></script>
+<script type="text/javascript">
+	fullpage.initialize('#fullpage', {
+		anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+		menu: '#menu',
+		css3:true
+		//scrollingSpeed: 1000设置显示的第几张section；
+		//continuousVertical: true设置无限循环
+		//scrollOverflow: true
+	});
+
+</script>
+
+</body>
+</html>
