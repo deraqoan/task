@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Pikaday - Theme example</title>
+    <meta name="author" content="Stuart McFarlane">
+    <link rel="stylesheet" href="pikaday.css">
+    <!-- field绑定Datepicker到表单字段
+trigger 使用不同的元素来触发开启Datepicker，看到触发器实例（默认字段）
+bound会自动显示/隐藏在重点领域DatePicker（默认如果字段设置）
+position优先位置的DatePicker相对于表单字段，例如：右上，右下角注：发生避免外面显示视口DatePicker可以自动调整位置，看例子（默认为“左下”）
+reposition可设置为false，不复位DatePicker视口内，迫使其采取的配置位置（默认值：true）
+container将DOM渲染成日历的容器DOM节点，见容器示例（默认：未定义）
+format格式的默认输出格式。tostring()和字段值（需要自定义格式Moment.js）
+formatstrict默认标志时刻严格的数据解析（需要自定义格式Moment.js）
+defaultdate初始日期查看第一次打开时
+setdefaultdate使defaultdate初始选择的价值
+firstDay最初的一周的第一日（0：1：星期日，星期一，等）
+mindate最小/最早的日期可以选择（这应该是一个本地对象-例如新（）或moment()。todate()）
+maxdate最大/最新日期，可以选择（这应该是一个本地对象-例如新（）或moment()。todate()）
+disableweekends禁止周六或周日选择
+disabledayfn回调函数获取视图通过每一天的日期对象。应该返回真正的禁用选择的那一天。
+yearrange号码（如10）或阵列上下范围（例如，[ 19002015 ]）
+showweeknumber显示ISO周数排在头（默认为false）
+pickwholeweek选择一周而不是一天（默认为false）
+isrtl反向从右到左的语言日历
+i18n国际化语言默认为一个月，工作日的名称（见国际化下）
+yearsuffix附加文本追加到年中的标题
+showmonthafteryear渲染月冠军年后（默认为false）
+showdaysinnextandpreviousmonths渲染天的日历网格下一个或下一个月而不是渲染一个空单元格的当前月份（默认：假）
+numberofmonths可见日历数
+maincalendar numberofmonths时使用，这将有助于您选择的主要日程将（默认左，可以设置为右）。仅用于第一次显示或选定日期尚未可见时使用
+events排列的日期要从正规的天分化（如[ 'sat 6月28日2017，孙俊29 2017”，“二Jul 01 2017”]）
+theme 定义一个类名，可以被用来作为一种造型不同的主题挂钩，看主题的例子（默认为空）
+blurfieldonselect定义如果字段模糊时，选择日期（默认为true）
+onselect回调函数时，选择日期
+onOpen在回调函数，当人变得可见
+onClose关闭后的回调函数时，选择器是隐藏的
+onDraw中的回调函数时，选择出一个新的月 -->
+</head>
+<body>
+    <label for="datepicker">Date:</label>
+    <br>
+    No theme <input type="text" id="datepicker">
+    <script src="pikaday.js"></script>
+    <script>
+    var pickerDefault = new Pikaday(
+    {
+        field: document.getElementById('datepicker'),
+		firstDay: 1,
+        minDate: new Date(2000, 0, 1),
+        maxDate: new Date(2020, 12, 31),
+        yearRange: [2000, 2020],
+        bound: true,
+    });
+
+    </script>
+</body>
+</html>

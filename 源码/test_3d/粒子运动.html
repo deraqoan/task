@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>Simple 3D Renderer</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<style type="text/css">body{background-color:#000000;margin:0px;overflow:hidden;}a{color:#0078ff;}</style>
+</head>
+<body>
+<script type="text/javascript">
+			var SCREEN_WIDTH = window.innerWidth,
+			SCREEN_HEIGHT = window.innerHeight,
+			HALF_WIDTH = window.innerWidth / 2,
+			HALF_HEIGHT = window.innerHeight / 2,
+			canvas = document.createElement( 'canvas' ),
+			context = canvas.getContext( '2d' ),
+			fov = 250,
+			TO_RADIANS = Math.PI / 180, 
+			points = [],
+			rotateAmount = 0;
+			 
+			init();
+			setInterval(loop, 1000 / 30);
+
+			function init() 
+			{
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+				container.appendChild(canvas); 
+				canvas.width = SCREEN_WIDTH; 
+				canvas.height = SCREEN_HEIGHT;
+				context.translate(HALF_WIDTH, HALF_HEIGHT);
+				for(var i = 0 ; i< 500; i++)
+				{
+					points.push(new Point3D(randomRange(-100,100),randomRange(-100,100),randomRange(-100,100)));
+				}
+				document.addEventListener( 'mousedown', function(){rotateAmount=2}, false );
+			}
+
+			function loop() 
+			{
+
+				context.fillStyle="rgb(0,0,0)";
+			  	context.fillRect(-HALF_WIDTH,-HALF_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT);
+				for (i=0; i<points.length; i++)
+				{
+					var point = points[i]; 
+					
+					// rotate it
+					point.rotateY(rotateAmount);
+					
+					// render it
+					draw3Din2D(point, context); 
+			
+				}
+			}
+			
+			function Point3D(x,y,z)
+			{
+				this.x = x; 
+				this.y = y; 
+				this.z = z; 
+				this.rotateY = function(angle)
+				{
+					
+					cosRY = Math.cos(angle * TO_RADIANS);
+					sinRY = Math.sin(angle * TO_RADIANS);
+					
+					var tempz = this.z;; 
+					var tempx = this.x; 
+				
+					this.x= (tempx*cosRY)+(tempz*sinRY);
+					this.z= (tempx*-sinRY)+(tempz*cosRY);
+				
+				}
+						
+			}
+			function draw3Din2D(p3d, c)
+			{  
+				var scale = fov/(fov + p3d.z);
+				var x2d = (p3d.x * scale);	
+				var y2d = (p3d.y * scale);
+				c.lineWidth= 2; 
+				c.strokeStyle = "rgb(255,255,255)"; 	
+				c.beginPath();
+				c.moveTo(x2d,y2d); 
+				c.lineTo(x2d+2,y2d); 
+				c.stroke(); 
+				
+			}
+			function randomRange(min, max)
+			{
+				return ((Math.random()*(max-min)) + min); 
+			}
+		</script>
+</body>
+</html>

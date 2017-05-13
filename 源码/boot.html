@@ -1,0 +1,494 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>选项卡（Tabs）</title>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css">
+<style type="text/css">
+	html,body{padding: 10px;margin: 10px;}
+	 
+  
+  
+    ul.nav-tabs.affix{
+        top: 430px; /* Set the top position of pinned element */
+    }
+</style>
+
+</head>
+<body data-spy="scroll" data-target="#myScrollspy #navbar-example2">
+<div class="container">
+    <div class="jumbotron">
+    <ul class="nav nav-pills">
+	<li class="dropdown">
+		<a href="##" data-toggle="dropdown" class="dropdown-toggle" role="button" id="tutorial">教程<b class="caret"></b></a>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="tutorial">
+			<li role="presentation"><a href="##">CSS3</a></li>
+			<li role="presentation"><a href="##">HTML5</a></li>
+			<li role="presentation"><a href="##">Sass</a></li>
+		</ul>
+	</li>
+	<li class="active"><a href="##">前端论坛</a></li>
+	<li><a href="##">关于我们</a></li>
+</ul>
+<ul class="nav nav-pills">
+    <li class="dropdown">
+		<a href="##"  class="dropdown-toggle" role="button" id="mytutorial">教程<b class="caret"></b></a>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="tutorial">
+			<li role="presentation"><a href="##">CSS3</a></li>
+			<li role="presentation"><a href="##">HTML5</a></li>
+			<li role="presentation"><a href="##">Sass</a></li>
+		</ul>
+	</li>
+	<li class="active"><a href="##">前端论坛</a></li>
+	<li><a href="##">关于我们</a></li>
+</ul>
+ <nav role="navigation" class="navbar navbar-default navbar-static" id="navbar-example2">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button data-target=".bs-example-js-navbar-scrollspy" data-toggle="collapse" type="button" class="navbar-toggle collapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">Project Name</a>
+        </div>
+        <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
+          <ul class="nav navbar-nav">
+            <li><a href="#fat">@fat</a></li>
+            <li><a href="#mdo">@mdo</a></li>
+            <li class="dropdown">
+              <a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" id="navbarDrop1" href="#">Dropdown <span class="caret"></span></a>
+              <ul aria-labelledby="navbarDrop1" role="menu" class="dropdown-menu">
+                <li><a tabindex="-1" href="#one">one</a></li>
+                <li><a tabindex="-1" href="#two">two</a></li>
+                <li class="divider"></li>
+                <li><a tabindex="-1" href="#three">three</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="scrollspy-example" data-offset="0" data-target="#navbar-example2" data-spy="scroll" data-offset="60">
+      <h4 id="fat">@fat</h4>
+      <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+      <h4 id="mdo">@mdo</h4>
+      <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+      <h4 id="one">one</h4>
+      <p>Occaecat commodo aliqua delectus. Fap craft beer deserunt skateboard ea. Lomo bicycle rights adipisicing banh mi, velit ea sunt next level locavore single-origin coffee in magna veniam. High life id vinyl, echo park consequat quis aliquip banh mi pitchfork. Vero VHS est adipisicing. Consectetur nisi DIY minim messenger bag. Cred ex in, sustainable delectus consectetur fanny pack iphone.</p>
+      <h4 id="two">two</h4>
+      <p>In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.</p>
+      <h4 id="three">three</h4>
+      <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+      <p>Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda. Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.
+      </p>
+    </div>
+ <div class="bs-example">
+    <nav id="navbar-menu" class="navbar navbar-default navbar-static" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button data-target=".bs-example-js-navbar-scrollspy" data-toggle="collapse" type="button" class="navbar-toggle collapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">Project Name</a>
+        </div>
+        <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
+          <ul class="nav navbar-nav">
+            <li><a href="#fat">@fat</a></li>
+            <li><a href="#mdo">@mdo</a></li>
+            <li class="dropdown">
+              <a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" id="navbarDrop1" href="#">Dropdown <span class="caret"></span></a>
+              <ul aria-labelledby="navbarDrop1" role="menu" class="dropdown-menu">
+                <li><a tabindex="-1" href="#one">one</a></li>
+                <li><a tabindex="-1" href="#two">two</a></li>
+                <li class="divider"></li>
+                <li><a tabindex="-1" href="#three">three</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="scrollspy" id="scrollspy">
+      <h4 id="fat">@fat</h4>
+      <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+      <h4 id="mdo">@mdo</h4>
+      <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+      <h4 id="one">one</h4>
+      <p>Occaecat commodo aliqua delectus. Fap craft beer deserunt skateboard ea. Lomo bicycle rights adipisicing banh mi, velit ea sunt next level locavore single-origin coffee in magna veniam. High life id vinyl, echo park consequat quis aliquip banh mi pitchfork. Vero VHS est adipisicing. Consectetur nisi DIY minim messenger bag. Cred ex in, sustainable delectus consectetur fanny pack iphone.</p>
+      <h4 id="two">two</h4>
+      <p>In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.</p>
+      <h4 id="three">three</h4>
+      <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+      <p>Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda. Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.
+      </p>
+
+    </div>
+<ul id="myTab" class="nav nav-pills" role="tablist">
+    <li class="active"><a href="#bulletin" role="tab" data-toggle="pill">公告</a></li>
+    <li><a href="#rule" role="tab" data-toggle="pill">规则</a></li>
+    <li><a href="#forum" role="tab" data-toggle="pill">论坛</a></li>
+    <li><a href="#security" role="tab" data-toggle="pill">安全</a></li>
+    <li><a href="#welfare" role="tab" data-toggle="pill">公益</a></li>
+</ul>
+<!-- 选项卡面板 -->
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="bulletin">公告内容面板</div>
+    <div class="tab-pane fade" id="rule">规则内容面板</div>
+    <div class="tab-pane fade" id="forum">论坛内容面板</div>
+    <div class="tab-pane fade" id="security">安全内容面板</div>
+    <div class="tab-pane fade" id="welfare">公益内容面板</div>
+</div>
+<!-- 选项卡组件（菜单项nav-tabs）-->
+<ul id="myTab" class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="#bulletin" role="tab" data-toggle="tab">公告</a></li>
+    <li><a href="#rule" role="tab" data-toggle="tab">规则</a></li>
+    <li><a href="#forum" role="tab" data-toggle="tab">论坛</a></li>
+	<li><a href="#security" role="tab" data-toggle="tab">安全</a></li>
+	<li><a href="#welfare" role="tab" data-toggle="tab">公益</a></li>
+</ul>
+<ul id="myTab1" class="nav nav-pills" role="tablist">
+    <li class="active"><a href="#bulletin" role="tab" data-toggle="pill">公告</a></li>
+    <li><a href="#rule" role="tab" >规则</a></li>
+    <li><a href="#forum" role="tab" >论坛</a></li>
+    <li><a href="#security" role="tab" >安全</a></li>
+    <li><a href="#welfare" role="tab" >公益</a></li>
+</ul>
+ <button type="button" 
+          class="btn btn-default" 
+          data-toggle="tooltip" 
+          data-placement="left" 
+          data-original-title="提示框居左" 
+          title="">
+  提示框居左      
+  </button>
+  <button type="button" 
+          class="btn btn-default" 
+          data-toggle="tooltip" 
+          data-placement="top" 
+          data-original-title="提示框在顶部">
+   提示框在顶部
+  </button>
+  <button type="button" 
+          class="btn btn-default" 
+          data-toggle="tooltip" 
+          data-placement="bottom" 
+          data-original-title="提示框在底部">
+  提示框在底部             
+  </button>
+  <button type="button" 
+          class="btn btn-default" 
+          data-toggle="tooltip" 
+          data-placement="right" 
+          data-original-title="提示框居右">
+  提示框居右      
+  </button>
+  <h3>链接制作的提示框</h3>
+  <a class="btn btn-primary" 
+     data-toggle="tooltip" 
+     data-placement="left" 
+     title="提示框居左">
+     提示框居左
+  </a>
+  <a class="btn btn-primary" 
+     data-toggle="tooltip" 
+     data-placement="top" 
+     title="提示框在顶部">
+     提示框在顶部
+  </a>
+  <a class="btn btn-primary" 
+     data-toggle="tooltip" 
+     data-placement="bottom" 
+     title="提示框在底部">
+     提示框在底部
+  </a>
+  <a class="btn btn-primary" 
+     data-toggle="tooltip" 
+     data-placement="right" 
+     title="提示框在居右">
+     提示框居右
+  </a>
+  <a href="##" 
+     class="btn btn-primary" 
+     id="myTooltip">
+     我是提示框
+  </a>
+   <button type="button" 
+  class="btn btn-default" 
+  data-toggle="tooltip" 
+  data-placement="left" 
+  data-original-title="data-animation='true'"
+  data-animation
+  data-animation="true">data-animation="true"</button>
+  
+  <h4>data-html="true"</h4>
+  <button type="button" 
+  class="btn btn-default" 
+  data-toggle="tooltip" 
+  data-placement="top" 
+  data-original-title="<h1>data-html='true'</h1>"
+  data-html="true">data-html="true"</button>
+  
+  <h4>data-trigger="click"</h4>
+  <button type="button" 
+  class="btn btn-default" 
+  data-toggle="tooltip" 
+  data-placement="bottom" 
+  data-original-title="data-trigger='click'"
+  data-trigger="click"
+  data-delay="500">data-trigger="click"</button>
+<button type="button" class="btn btn-default" id="myPopover">猛击我吧</button>
+<button type="button" 
+        class="btn btn-default" 
+        data-container="body" 
+        data-placement="bottom" 
+        data-toggle="popover" 
+        data-original-title="Bootstrap弹出框标题" 
+        data-content="Bootstrap弹出框的内容" >
+        猛击我吧
+</button>
+<a href="#" class="btn btn-default" 
+        data-container="body" 
+        data-placement="right" 
+        data-toggle="popover" 
+        title="Bootstrap弹出框标题" 
+        data-content="Bootstrap弹出框的内容">
+        猛击我吧
+</a>
+<div class="alert alert-success" role="alert">
+    <button class="close"  data-dismiss="alert" type="button" >&times;</button>
+    <p>恭喜您操作成功！</p>
+</div>
+<div class="alert alert-warning" role="alert" id="myAlert">
+    <h4>谨防被骗</h4>
+    <p>请确认您转账的信息是你的亲朋好友，不要轻意相信不认识的人...</p>
+    <button type="button"  class="btnbtn-danger" id="closei">关闭</button>
+</div>
+<button class="btn btn-primary" data-loading-text="正在加载中,请稍等..." type="button" id="loaddingBtn">加载</button>
+<div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="options1">男
+    </label>
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="options2">女
+    </label>
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="options3">未知
+    </label>
+</div>
+<div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary">
+        <input type="checkbox" name="options" id="options1">电影
+    </label>
+    <label class="btn btn-primary">
+        <input type="checkbox" name="options" id="options2">音乐
+    </label>
+    <label class="btn btn-primary">
+        <input type="checkbox" name="options" id="options3">游戏
+    </label>
+    <label class="btn btn-primary">
+        <input type="checkbox" name="options" id="options4">摄影
+    </label>
+</div>
+<div class="btn-group" data-toggle="button">
+    <button type="button" data-toggle="button" class="btn btn-primary">确认</button>
+</div>
+<div class="btn-group" data-toggle="buttons">
+    <button type="button" data-toggle="button" class="btn btn-primary" id="mybutton" data-complete-text="Loading finished" data-loading-text="Loading...">确认</button>
+</div>
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">标题一</a></h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">标题一对应的内容</div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">标题二</a></h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">标题二对应的内容</div>
+        </div>
+    </div>
+</div>
+<div id="slidershow" class="carousel" data-ride="carousel" data-wrap="true" data-interval="2000">
+<!-- 设置图片轮播的顺序 -->
+    <ol class="carousel-indicators">
+        <li class="active" data-target="#slidershow" data-slide-to="0"></li>
+        <li data-target="#slidershow" data-slide-to="1"></li>
+        <li data-target="#slidershow" data-slide-to="2"></li>
+    </ol
+    <!-- 设置轮播图片 -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <a href="##"><img src="http://images3.c-ctrip.com/rk/201407/ll580x145.jpg" alt=""></a>
+            <div class="carousel-caption">
+                <h3>图片标题1</h3>
+                <p>描述内容1...</p>
+            </div>
+        </div>
+        <div class="item">
+            <a href="##"><img src="http://images3.c-ctrip.com/dj/201408/zj/zj_580145.jpg" alt=""></a>
+            <div class="carousel-caption">
+                <h3>图片标题2</h3>
+                <p>描述内容2...</p>
+            </div>
+        </div>
+        <div class="item">
+            <a href="##"><img src="http://images3.c-ctrip.com/dj/201408/zqgq_580145.jpg" alt=""></a>
+            <div class="carousel-caption">
+                <h3>图片标题3</h3>
+                <p>描述内容3...</p>
+            </div>
+        </div>
+        </div>
+        <!-- 设置轮播图片控制器 -->
+       <a class="left carousel-control" href="#slidershow" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#slidershow" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+    </div>
+ <div id="myslidershow" class="carousel slide">
+    <!-- 设置图片轮播的顺序 -->
+    <ol class="carousel-indicators">
+        <li class="active" data-target="#slidershow" data-slide-to="0">1</li>
+        <li data-target="#slidershow" data-slide-to="1">2</li>
+        <li data-target="#slidershow" data-slide-to="2">3</li>
+    </ol>
+    <!-- 设置轮播图片 -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <a href="##"><img src="http://images3.c-ctrip.com/rk/201407/ll580x145.jpg" alt=""></a>
+            <div class="carousel-caption">
+                <h3>图片标题1</h3>
+                <p>描述内容1...</p>
+            </div>
+        </div>
+        <div class="item">
+            <a href="##"><img src="http://images3.c-ctrip.com/dj/201408/zj/zj_580145.jpg" alt=""></a>
+            <div class="carousel-caption">
+                <h3>图片标题2</h3>
+                <p>描述内容2...</p>
+            </div>
+        </div>
+        <div class="item">
+            <a href="##"><img src="http://images3.c-ctrip.com/dj/201408/zqgq_580145.jpg" alt=""></a>
+            <div class="carousel-caption">
+                <h3>图片标题3</h3>
+                <p>描述内容3...</p>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#slidershow" role="button">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#slidershow" role="button">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+  </div>
+    <div class="row">
+        <div class="col-xs-3" id="myScrollspy">
+            <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125">
+                <li class="active"><a href="#section-1">第一部分</a></li>
+                <li><a href="#section-2">第二部分</a></li>
+                <li><a href="#section-3">第三部分</a></li>
+                <li><a href="#section-4">第四部分</a></li>
+                <li><a href="#section-5">第五部分</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-9">
+            <h2 id="section-1">第一部分</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum id metus ac nisl bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet sagittis. In tincidunt orci sit amet elementum vestibulum. Vivamus fermentum in arcu in aliquam. Quisque aliquam porta odio in fringilla. Vivamus nisl leo, blandit at bibendum eu, tristique eget risus. Integer aliquet quam ut elit suscipit, id interdum neque porttitor. Integer faucibus ligula.</p>
+           
+            <hr>
+            <h2 id="section-2">第二部分</h2>
+            <p>Nullam hendrerit justo non leo aliquet imperdiet. Etiam in sagittis lectus. Suspendisse ultrices placerat accumsan. Mauris quis dapibus orci. In dapibus velit blandit pharetra tincidunt. Quisque non sapien nec lacus condimentum facilisis ut iaculis enim. Sed viverra interdum bibendum. Donec ac sollicitudin dolor. Sed fringilla vitae lacus at rutrum. Phasellus congue vestibulum ligula sed consequat.</p>
+          
+            <hr>
+            <h2 id="section-3">第三部分</h2>
+            <p>Integer pulvinar leo id risus pellentesque vestibulum. Sed diam libero, sodales eget sapien vel, porttitor bibendum enim. Donec sed nibh vitae lorem porttitor blandit in nec ante. Pellentesque vitae metus ipsum. Phasellus sed nunc ac sem malesuada condimentum. Etiam in aliquam lectus. Nam vel sapien diam. Donec pharetra id arcu eget blandit. Proin imperdiet mattis augue in porttitor. Quisque tempus enim id lobortis feugiat. Suspendisse tincidunt risus quis dolor fringilla blandit. Ut sed sapien at purus lacinia porttitor. Nullam iaculis, felis a pretium ornare, dolor nisl semper tortor, vel sagittis lacus est consequat eros. Sed id pretium nisl. Curabitur dolor nisl, laoreet vitae aliquam id, tincidunt sit amet mauris.</p>
+           
+            <hr>
+            <h2 id="section-4">第四部分</h2>
+            <p>Suspendisse a orci facilisis, dignissim tortor vitae, ultrices mi. Vestibulum a iaculis lacus. Phasellus vitae convallis ligula, nec volutpat tellus. Vivamus scelerisque mollis nisl, nec vehicula elit egestas a. Sed luctus metus id mi gravida, faucibus convallis neque pretium. Maecenas quis sapien ut leo fringilla tempor vitae sit amet leo. Donec imperdiet tempus placerat. Pellentesque pulvinar ultrices nunc sed ultrices. Morbi vel mi pretium, fermentum lacus et, viverra tellus. Phasellus sodales libero nec dui convallis, sit amet fermentum sapien auctor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed eu elementum nibh, quis varius libero.</p>
+        
+            <hr>
+            <h2 id="section-5">第五部分</h2>
+            <p>Nam eget purus nec est consectetur vehicula. Nullam ultrices nisl risus, in viverra libero egestas sit amet. Etiam porttitor dolor non eros pulvinar malesuada. Vestibulum sit amet est mollis nulla tempus aliquet. Praesent luctus hendrerit arcu non laoreet. Morbi consequat placerat magna, ac ornare odio sagittis sed. Donec vitae ullamcorper purus. Vivamus non metus ac justo porta volutpat.</p>
+            <p>Vivamus mattis accumsan erat, vel convallis risus pretium nec. Integer nunc nulla, viverra ut sem non, scelerisque vehicula arcu. Fusce bibendum convallis augue sit amet lobortis. Cras porta urna turpis, sodales lobortis purus adipiscing id. Maecenas ullamcorper, turpis suscipit pellentesque fringilla, massa lacus pulvinar mi, nec dignissim velit arcu eget purus. Nam at dapibus tellus, eget euismod nisl. Ut eget venenatis sapien. Vivamus vulputate varius mauris, vel varius nisl facilisis ac. Nulla aliquet justo a nibh ornare, eu congue neque rutrum.</p>
+            <p>Suspendisse a orci facilisis, dignissim tortor vitae, ultrices mi. Vestibulum a iaculis lacus. Phasellus vitae convallis ligula, nec volutpat tellus. Vivamus scelerisque mollis nisl, nec vehicula elit egestas a. Sed luctus metus id mi gravida, faucibus convallis neque pretium. Maecenas quis sapien ut leo fringilla tempor vitae sit amet leo. Donec imperdiet tempus placerat. Pellentesque pulvinar ultrices nunc sed ultrices. Morbi vel mi pretium, fermentum lacus et, viverra tellus. Phasellus sodales libero nec dui convallis, sit amet fermentum sapien auctor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed eu elementum nibh, quis varius libero.</p>
+            <p>Morbi sed fermentum ipsum. Morbi a orci vulputate tortor ornare blandit a quis orci. Donec aliquam sodales gravida. In ut ullamcorper nisi, ac pretium velit. Vestibulum vitae lectus volutpat, consequat lorem sit amet, pulvinar tellus. In tincidunt vel leo eget pulvinar. Curabitur a eros non lacus malesuada aliquam. Praesent et tempus odio. Integer a quam nunc. In hac habitasse platea dictumst. Aliquam porta nibh nulla, et mattis turpis placerat eget. Pellentesque dui diam, pellentesque vel gravida id, accumsan eu magna. Sed a semper arcu, ut dignissim leo.</p>
+            <p>Sed vitae lobortis diam, id molestie magna. Aliquam consequat ipsum quis est dictum ultrices. Aenean nibh velit, fringilla in diam id, blandit hendrerit lacus. Donec vehicula rutrum tellus eget fermentum. Pellentesque ac erat et arcu ornare tincidunt. Aliquam erat volutpat. Vivamus lobortis urna quis gravida semper. In condimentum, est a faucibus luctus, mi dolor cursus mi, id vehicula arcu risus a nibh. Pellentesque blandit sapien lacus, vel vehicula nunc feugiat sit amet.</p>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<script>
+    $(function(){
+    	$("#mytutorial").one("click",function(){
+    $(this).dropdown("toggle");
+    });
+    $("#myTab1 a").click(function(e){
+        e.preventDefault();
+        $(this).tab("show");
+    });
+    $('[data-toggle="tooltip"]').tooltip();
+    $('#myTooltip').tooltip({
+      title:"我是一个提示框，我在顶部出现",
+      placement:"top",
+      delay:800,
+      animation:true,
+      html:true,
+      trigger:"click"
+      
+    });
+    $('[data-toggle="popover"]').popover();
+     $('#myPopover').popover({
+     title:"我是弹出框的标题",
+     content:"我是弹出框的内容",
+     placement:"right"
+  });
+     $("#closei").click(function(){
+         $(this).alert("close");
+     })
+ $("#loaddingBtn").click(function(){
+         $(this).button("loading");
+     })
+ $("#mybutton").click(function(){
+         $(this).button('loading').delay(1000).queue(function() {
+             $(this).button('complete');
+           
+         }).delay(1000).queue(function() {
+            $(this).button('reset');
+         });        ;        
+      });
+ $('.carousel').carousel();
+  $("#myslidershow").carousel({
+                interval:800,
+                wrap:true
+            });
+  $("#myslidershow a.left").click(function(){
+                $("#myslidershow").carousel("prev");
+            });
+  $("#myslidershow a.right").click(function(){
+                $("#myslidershow").carousel("next");
+            });
+   $("#scrollspy").scrollspy({
+        target: "#navbar-menu"
+    });
+})
+   
+</script>
+</body>
+</html>

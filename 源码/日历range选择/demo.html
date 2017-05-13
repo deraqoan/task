@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+   <head>
+      <meta charset="UTF-8" />
+      <title>A date range picker for Bootstrap</title>
+      <link rel="stylesheet" type="text/css" media="all" href="daterangepicker.css" />
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+      <script type="text/javascript" src="moment.min.js"></script>
+      <script type="text/javascript" src="daterangepicker.js"></script>
+   </head>
+   <body style="margin: 60px 0">
+     <div  style="margin:100px;">
+                <label for="startDate">startDate</label>
+                <input type="text" class="form-control" id="startDate" value="07/01/2015">
+              </div>
+          <div class="demo" style="margin:100px; ">
+            <h4>Your Date Range Picker</h4>
+            <input type="text" id="config-demo" >
+            <i class="fa fa-calendar"></i>
+          </div>
+      <style type="text/css">
+      .demo { position: relative; }
+      .demo i {
+        position: absolute; bottom: 10px; right: 24px; top: auto; cursor: pointer;
+      }
+      </style>
+
+      <script type="text/javascript">
+      $(document).ready(function() {
+		  
+        $('#startDate').daterangepicker({
+          singleDatePicker: true,
+          startDate: moment().subtract(6, 'days')
+        });
+
+       updateConfig();
+        function updateConfig() {
+          var options = {};
+          if ($('#locale').is(':checked')) {
+            $('#rtl-wrap').show();
+            options.locale = {
+              direction: $('#rtl').is(':checked') ? 'rtl' : 'ltr',
+              format: 'MM/DD/YYYY HH:mm',
+              separator: ' - ',
+              applyLabel: 'Apply',
+              cancelLabel: 'Cancel',
+              fromLabel: 'From',
+              toLabel: 'To',
+              customRangeLabel: 'Custom',
+              daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr','Sa'],
+              monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+              firstDay: 1
+            };
+          } else {
+            $('#rtl-wrap').hide();
+          }
+          $('#config-demo').daterangepicker(options, function(start, end, label) { console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')'); });
+          
+        }
+
+      });
+      </script>
+
+   </body>
+</html>
