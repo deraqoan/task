@@ -1,0 +1,35 @@
+*{padding: 0;margin: 0;}
+html,body{height: 100%;}
+body{
+	min-width: 1200px;
+	min-height: 600px;
+	overflow-y: hidden;
+}
+.main{width: 1200px;height: 600px;top: 50%;left: 50%;
+	margin-left: -600px;position: absolute;
+	margin-top: -300px;overflow: hidden;
+	background:url(img/bg.jpg) no-repeat center;}
+.c_zongzi_box{
+	width: 312px;height: 305px;position: absolute;
+	left: 700px;top: 184px;
+}
+.c_zongzi{
+	width: 312px;
+	height: 305px;background: url(img/zz.png) no-repeat center;
+	position: absolute;left: 700px;top: 184px;
+}
+
+.c_shengzi_1{
+	width: 218px;height: 180px;position: absolute;left:10px;top: 120px;
+	background: url(img/line_1.png);z-index: 999;
+}
+.c_shengzi_2{
+	background: url(img/line_2.png) no-repeat center;
+	width: 219px;
+	height: 159px;
+	top: 158px;
+}
+.c_zongzi_box{
+	background:url(img/zzr_1.png) no-repeat center;
+	height: ;
+}

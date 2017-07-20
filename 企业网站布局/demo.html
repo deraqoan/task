@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>企业网站</title>
+	<link rel="stylesheet" href="demo.css">
+	<script type="text/javascript" src='setHomeSetFav.js'></script>
+	<script type="text/javascript" src="myFocus/myfocus-2.0.4.min.js"></script>
+	<script type="text/javascript" src='myFocus/mf-pattern/mF_YSlider.js'></script>
+	<link rel="stylesheet" type="text/css" href="myFocus/mf-pattern/mF_YSlider.css">
+	<script type="text/javascript">
+myFocus.set({
+    width:1000,//ÉèÖÃÍ¼Æ¬ÇøÓò¿í¶È(ÏñËØ)
+    height:310,//ÉèÖÃÍ¼Æ¬ÇøÓò¸ß¶È(ÏñËØ)
+    id: 'boxID',//焦点图盒子ID
+    pattern: 'mF_fancy',//焦点图风格的名称
+    time: 10,//切换时间间隔(秒)
+    trigger: 'mouseover',//触发切换模式:'click'(点击)/'mouseover'(悬停)
+    delay: 200,//'mouseover'模式下的切换延迟(毫秒)
+    txtHeight: 'default'//标题高度设置(像素),'default'为默认CSS高度，0为隐藏
+});
+	</script>
+</head>
+<body>
+	<div class="top">
+		<div class="top_content">
+			<ul>
+				<li><a href="#" title="" onclick="SetHome(window.location)">首页</a></li>
+				<li><a href="#" onclick="AddFavorite(window.location,document.title)">收藏</a></li>
+				<li><a href="#">联系我们</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="wrap">
+		<div class="logo">
+		<div class="logo_left">
+			<img src="images/logo.jpg" alt="慕课网">
+		</div>
+		<div class="logo_right">
+			<img src="images/tel.jpg" alt="服务热线">24小时服务热线<span class="tel">123-456-7890</span>
+		</div>
+	</div>
+	
+	<div class="nav">
+    <div class="nav_left"></div>
+    <div class="nav_mid">
+      <div class="nav_mid_left">
+        <ul>
+          <li><a href="#">首页</a></li>
+          <li><a href="list.html">关于慕课</a></li>
+          <li><a href="list.html">新闻动态</a></li>
+          <li><a href="list.html">课程中心</a></li>
+          <li><a href="list.html">在线课程</a></li>
+          <li><a href="list.html">人才招聘</a></li>
+        </ul>
+      </div>
+      <div class="nav_mid_right">
+        <form action="" method="post">
+          <input type="text" class="search_text" />
+        </form>
+      </div>
+    </div>
+    <div class="nav_right"></div>
+  </div>
+    <div id="boxID" class="ad">
+      <div class="loading"><img src="images/loading.gif" alt="请稍候。。。" /></div>
+      <div class="pic">
+        <ul>
+          <li><a href="#"><img src="images/ad2.jpg" thumb="" alt="" text="" /></a></li>
+          <li><a href="#"><img src="images/ad3.jpg" thumb="" alt="" text="" /></a></li>
+          <li><a href="#"><img src="images/ad4.jpg" thumb="" alt="" text="" /></a></li>
+          <li><a href="#"><img src="images/ad3.jpg" thumb="" alt="" text="" /></a></li>
+        </ul>
+      </div>
+  </div>
+    <div class="main">
+    <div class="news">
+      <div class="title">
+        <h2 class="titile_left">新闻中心</h2>
+        <span class="title_right"><a href="#">More&gt;&gt;</a></span>
+      </div>      
+      <div class="pic_news">
+       <img src="images/news.jpg" alt="" width="113" height="77" />
+        <h2><a href="news.html">520 慕女神喊你来表白 </a></h2>
+        <p>活动时间：5月20日——5月25日<br />获奖公布时间：5月26日
+          <br />
+          <a href="news.html">Learn More>></a></p>
+      </div>
+      <div class="news_list">
+        <ul>
+          <li><span>2014-06-01</span> <a href="news.html">【慕课访谈】</a></li>
+          <li><span>2014-06-01</span><a href="news.html">【有奖活动】</a></li>
+          <li><span>2014-05-30</span><a href="news.html">【获奖公告】</a></li>
+          <li><span>2014-05-28</span><a href="news.html" title="aa">【程序员篇】</a></li>
+        </ul>
+      </div>      
+    </div>
+    <div class='products'>
+    	
+    		<div class="title">
+    			<h2 class="titile_left">产品中心</h2>
+    			<span class="title_right"><a href="#">More&gt;&gt;</a></span>
+    		</div>
+    	
+    	<div class="product_list">
+    		<img src="images/css.jpg" alt="" width="113" height="77" />
+    		        <h2><a href="news.html">css圆角进化论 </a></h2>
+    		        <p>
+    		         CSS圆角的实现，经历了三大发展阶段：背景图片方式、CSS2.0+HTMl标签模拟、CSS3.0圆角属性）。本案例详细讲解每一种的实现方式，并对 实现的优缺点进行对比分析。
+    		          <a href="news.html">Learn More>></a></p>
+    	</div>
+    	<div class="product_type">
+    		<ul>
+    		  <li>PHP开发</li>
+    		  <li>前端开发</li>
+    		  <li>Java开发</li>
+    		  <li>Android开发</li>
+    		</ul>
+    	</div>
+    </div>
+    <div class="sidebar">
+    	<div class="video">
+    		<div class="title">
+    			<h2 class="titile_left">产品中心</h2>
+    			<span class="title_right"><a href="#">More&gt;&gt;</a></span>
+    		</div>
+    		<p class="video_content">
+    			<embed src="http://player.youku.com/player.php/sid/XNjkzMDE5MTUy/v.swf"allowFullScreen="true" quality="high" width="220" height="140" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+            </p> 
+    	</div>
+    	<div class="service">
+    		<img src="images/app.jpg" alt="">
+    	</div>
+    </div> 
+ </div>
+ <div class="list_main">
+ 	<div class="news_type">
+ 		<h2>新闻中心</h2>
+ 		<div class="news_type_content">
+ 			<ul>
+ 				<li>公司新闻</li>
+ 				<li>行业新闻</li>
+ 				<li>媒体报道</li>
+ 				<li>活动专题</li>
+ 				<li>资源下载</li>
+ 				<li>公司内刊</li>
+ 				<li>精彩刊物</li>
+ 			</ul>
+ 		</div>
+ 	</div>
+ 	<div class="list_box">
+ 		<h2>新闻中心</h2>
+ 		<div class="news_list">
+        <ul>
+          <li><span>2014-06-01</span> <a href="news.html">【慕课访谈】</a></li>
+          <li><span>2014-06-01</span><a href="news.html">【有奖活动】</a></li>
+          <li><span>2014-05-30</span><a href="news.html">【获奖公告】</a></li>
+          <li><span>2014-05-28</span><a href="news.html" title="aa">【程序员篇】</a></li>
+          <li><span>2014-06-01</span> <a href="news.html">【慕课访谈】</a></li>
+          <li><span>2014-06-01</span><a href="news.html">【有奖活动】</a></li>
+          <li><span>2014-05-30</span><a href="news.html">【获奖公告】</a></li>
+          <li><span>2014-05-28</span><a href="news.html" title="aa">【程序员篇】</a></li>
+          <li><span>2014-06-01</span> <a href="news.html">【慕课访谈】</a></li>
+          <li><span>2014-06-01</span><a href="news.html">【有奖活动】</a></li>
+          <li><span>2014-05-30</span><a href="news.html">【获奖公告】</a></li>
+          <li><span>2014-05-28</span><a href="news.html" title="aa">【程序员篇】</a></li> 
+        </ul>
+      </div> 
+      <div class="page">
+      	<a href="">首页</a>
+      	<a href="">《</a>
+      	<a href="">1</a>
+      	<a href="">2</a>
+      	<a href="">3</a>
+      	
+      	<a href="">》</a>
+      	<a href="">...</a>
+      	<a href="">末页</a>
+      </div>   
+ 	</div>
+ </div>
+</div>
+<div class='copyright'>
+	<div class="copyright_content">
+		<ul>
+			<li>关于
+				<ul>
+					<li>品牌故事</li>
+				    <li>联系我们</li>
+				    <li>加入我们</li>
+				    <li>版权声明</li>
+				</ul>
+			</li>
+		    <li>课程
+		    	<ul>
+		    		<li>PHP开发</li>
+    		  <li>前端开发</li>
+    		  <li>Java开发</li>
+    		  <li>Android开发</li>
+		    	</ul>
+		    </li>
+		    <li>留言
+		    	<ul>
+		    		<li>新浪微博</li>
+		    	    <li>腾讯微博</li>
+		    	    <li>企业微博</li>
+		    	    <li>QQ空间</li>
+		    	</ul>
+		    </li>
+		    <li>关注
+		    	<ul>
+		    		<li>意见反馈</li>
+		    	    <li>问题留言</li>
+		    	    <li>媒体联络</li>
+		    	    <li>在线客服</li>
+		    	</ul>
+		    </li>
+		    <li><img src="images/weixin.png" alt="" height="27" width="30"><ul>
+		    	<li><img src="images/qrcode.jpg" width="102" height="102" alt=""></li>
+		    </ul></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

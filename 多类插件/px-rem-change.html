@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>页面源代码中替换 px 为 rem</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, minimal-ui, shrink-to-fit=no">
+<style>
+body { margin: 10px; }
+body, button, textarea { font-size: 16px; font-family: Arial, Roboto, 'Droid Sans', 'Hiragino Sans GB', 'Microsoft YaHei', 'Simsun', STXihei, 'sans-serif'; line-height: 1.5; background-color: #FFFFFF;}
+button { overflow: visible; padding: .1em .25em; cursor: pointer; }
+textarea { overflow: auto; vertical-align: text-bottom; *vertical-align: auto; border: 1px solid; resize: vertical; }
+
+#sourceCode,
+#resultCode {float: left;width: 45%;height: 300px;padding: 10px;margin: 10px 2%;border: 1px solid #000;box-sizing: border-box;resize: none;}
+#resultCode {float: right;overflow: hidden;overflow-y: auto;border-color: #D8D8D8;}
+#changeCode {clear: both;}
+#changeCode {display: block;width: 30%;height: 50px;margin: 10px auto 0;text-align: center;line-height: 50px;text-align: center;background-color: #ff9a14;color: #fff;border: 0 none;border-radius: 5px;}
+#changeCode:hover {opacity: .8;}
+</style>
+</head>
+<body>
+<h1>转换 CSS 中的 px 单位为 rem</h1>
+<p>直接转换 CSS 代码中的 px 单位为 rem 单位，同时增加 html 标签中的 font-size 为 100px 来计算，并且对于其他几个分辨率做放大倍数来处理。<strong>主要作用其实就是替换 CSS 中的 px 单位为 rem 单位！</strong></p>
+<textarea id="sourceCode">/* CSS 代码示例 */
+body {font-size: 14px;font: normal 14px/30px Arial, Roboto, 'Droid Sans', 'Hiragino Sans GB', 'Microsoft YaHei', 'Simsun', STXihei, 'sans-serif';}
+p {width: 200px;height: 100px;padding: 5px;margin: -5px auto 10px;font-size: 16px;border: 1px solid #000;}
+p + p {height: 200px;padding: 20px 5px 10px 30px;border-width: 10px;}
+p:nth-of-type(3) {width: 100px;height: 50px;border: 5px solid #f00;}</textarea>
+<div id="resultCode" style="color:#F0F;"></div>
+<button id="changeCode">转换 px 为 rem</button>
+<script>
+window.onload = function() {
+	var sc = document.getElementById("sourceCode"),
+		rc = document.getElementById("resultCode"),
+		cc = document.getElementById("changeCode"),
+		patt = /(\d+)(px*)/g,
+		pattBorder = /(border.+?)(\d+.\d+)(rem*)/g,
+		pattFont = /((font.+?)(\d+)rem\/)(\d+\.\d)rem/g,
+		changeResulte = "",
+		code = "";
+
+	function $(id) { 
+		return document.getElementById(id); 
+	};
+	$("changeCode").onclick=function(){
+		changeResulte = sc.value.replace(patt, 
+				function($1,$2){
+					return((Number($2)/100) + "rem");
+				})
+		changeResulte = changeResulte.replace(pattBorder, 
+				function($1,$2,$3,$4){
+					return($2 + (Number($3)*100) + "px");
+				})
+		changeResulte = changeResulte.replace(pattFont, 
+				function($1,$2,$3,$4,$5){
+					return($3 + (Number($4)) + "rem/" + (Number($5)*100) + "px");
+				})
+
+		rc.innerHTML = code = "/* 默认字体大小为 100px 来计算 rem 的值 */\nhtml {font-size: 100px;}\n/* 放大 1.1 倍的设备 */\n@media (min-width: 751px), (min-width: 376px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 320px) and (-webkit-min-device-pixel-ratio: 3) {\n\thtml {\n\t\tfont-size: 110px;\n\t}\n}\n/* 放大 1.2 倍的设备 */\n@media (min-width: 1081px), (min-width: 541px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 415px) and (-webkit-min-device-pixel-ratio: 3) {\n\thtml {\n\t\tfont-size: 120px;\n\t}\n}\n/* 以上内容是根据 html 标签的文字改变页面中元素的大小 */\n\n\n" + changeResulte;
+
+		// 以下是代码高亮部分，来源网络
+		// var code="html {font-size: 100px;}\n" + changeResulte; 
+		var startIdx=endIndex=-1; 
+		var at=0; 
+		var commentList=[]; 
+		while(true){ 
+			startIndex=code.indexOf("/*",at); 
+			if(startIndex==-1)break; 
+			endIndex=code.indexOf("*/",startIndex); 
+			if(endIndex==-1)break; 
+			 
+			at=endIndex+2; 
+			commentList.push(code.substring(startIndex,at)); 
+			code=code.replace(commentList[commentList.length-1],"_"+(commentList.length-1)+"_"); 
+		} 
+		 
+		code=code.replace(/(['"]).*\1/g,function(m){return "<span style=\"color:#060;\">"+m+"</span>"}); 
+		//CSS样式值 
+		code=code.replace(/:(.+);/g,function(m,n){return ":<span style=\"color:#00F;\">"+n+"</span>;"}); 
+		//CSS样式名称 
+		code=code.replace(/[{}]/g,function(m){ 
+			if(m=="{"){ 
+				return "{<span style=\"color:#006;\">"; 
+			}else{ 
+				return "</span>}"; 
+			} 
+		}); 
+		 
+		//注释 
+		code=code.replace(/_(\d+)_/g,function(m,n){return "<span style=\"color:#999;\">"+commentList[n]+"</span>"}); 
+		//处理\t 
+		code=code.replace(/^(\t+)/gm,function(m){ 
+			return (new Array(m.length+1)).join("    ");                                     
+		}); 
+		//处理空格 
+		code=code.replace(/^( +)/gm, function(m) { 
+			return (new Array(m.length + 1)).join(" "); 
+		}); 
+		//处理换行 
+		code=code.replace(/\r?\n/g,"<br>");
+		$("resultCode").innerHTML=code; 
+	}
+}
+</script>
+</body>
+</html>
